@@ -12,6 +12,7 @@
 		634B72182838CA66007AD2FD /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B5DEC283284ED00F0C654 /* ToDoListViewController.swift */; };
 		634B721A2838CA69007AD2FD /* AddNewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B72062838C70C007AD2FD /* AddNewTodoView.swift */; };
 		634B722028390B67007AD2FD /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B721F28390B67007AD2FD /* TodoItem.swift */; };
+		634B7229283A588C007AD2FD /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B7228283A588C007AD2FD /* Handler.swift */; };
 		636B5DF128328AB100F0C654 /* BettinsPersonalUse-ywPem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 636B5DF028328AB100F0C654 /* BettinsPersonalUse-ywPem.ttf */; };
 		EB2BE501239524DB00FB933B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2BE4FF239524DB00FB933B /* Main.storyboard */; };
 		EB2BE503239524DC00FB933B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2BE502239524DC00FB933B /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		634B71F32838B55C007AD2FD /* AddNewTodoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewTodoView.xib; sourceTree = "<group>"; };
 		634B72062838C70C007AD2FD /* AddNewTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTodoView.swift; sourceTree = "<group>"; };
 		634B721F28390B67007AD2FD /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		634B7228283A588C007AD2FD /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		636B5DEC283284ED00F0C654 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		636B5DF028328AB100F0C654 /* BettinsPersonalUse-ywPem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BettinsPersonalUse-ywPem.ttf"; sourceTree = "<group>"; };
 		EB2BE4F6239524DB00FB933B /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +45,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634B7223283A502B007AD2FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				634B721F28390B67007AD2FD /* TodoItem.swift */,
+				634B7228283A588C007AD2FD /* Handler.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		634B7225283A572D007AD2FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				634B71F32838B55C007AD2FD /* AddNewTodoView.xib */,
+				EB2BE4FF239524DB00FB933B /* Main.storyboard */,
+				EB2BE504239524DC00FB933B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		634B7226283A573C007AD2FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				636B5DEC283284ED00F0C654 /* ToDoListViewController.swift */,
+				634B72062838C70C007AD2FD /* AddNewTodoView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		636B5DF328328ABA00F0C654 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,16 +100,13 @@
 		EB2BE4F8239524DB00FB933B /* Todoey */ = {
 			isa = PBXGroup;
 			children = (
-				634B72062838C70C007AD2FD /* AddNewTodoView.swift */,
-				634B71F32838B55C007AD2FD /* AddNewTodoView.xib */,
-				636B5DF328328ABA00F0C654 /* Fonts */,
-				636B5DEC283284ED00F0C654 /* ToDoListViewController.swift */,
 				EB2BE4F9239524DB00FB933B /* AppDelegate.swift */,
-				EB2BE4FF239524DB00FB933B /* Main.storyboard */,
+				636B5DF328328ABA00F0C654 /* Fonts */,
+				634B7226283A573C007AD2FD /* Controller */,
+				634B7225283A572D007AD2FD /* View */,
+				634B7223283A502B007AD2FD /* Model */,
 				EB2BE502239524DC00FB933B /* Assets.xcassets */,
-				EB2BE504239524DC00FB933B /* LaunchScreen.storyboard */,
 				EB2BE507239524DC00FB933B /* Info.plist */,
-				634B721F28390B67007AD2FD /* TodoItem.swift */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";
@@ -160,6 +187,7 @@
 				634B721A2838CA69007AD2FD /* AddNewTodoView.swift in Sources */,
 				634B72182838CA66007AD2FD /* ToDoListViewController.swift in Sources */,
 				634B722028390B67007AD2FD /* TodoItem.swift in Sources */,
+				634B7229283A588C007AD2FD /* Handler.swift in Sources */,
 				634B72162838CA5E007AD2FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
