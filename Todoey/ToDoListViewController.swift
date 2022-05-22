@@ -12,11 +12,26 @@ class ToDoListViewController: UITableViewController{
 
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     @IBOutlet weak var tabelView: UITableView!
-    var itemArray = ["buy imac","goto hospital","fly to NewYork"]
+    var dataFilePath:URL?
+    var itemArray = [TodoItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+        if FileManager().fileExists(atPath: dataFilePath!.path) == false {
+            saveItems()
+        }
+    
+        do{
+            let data = try Data(contentsOf: dataFilePath!)
+            let decoder = PropertyListDecoder()
+            itemArray = try decoder.decode([TodoItem].self, from: data)
+        }
+        catch{
+            let alert = UIAlertController(title: "Error", message: "Fail to get todos", preferredStyle: .alert)
+            present(alert, animated: true, completion: nil)
+        }
         tableView.dataSource = self
     }
     
@@ -26,14 +41,15 @@ class ToDoListViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let itemCell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        itemCell.textLabel?.text = itemArray[indexPath.row]
+        itemCell.textLabel?.text = itemArray[indexPath.row].what
+        itemCell.accessoryType = itemArray[indexPath.row].done == true ? .checkmark : .none
         return itemCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let itemCell = tableView.cellForRow(at: indexPath) else { return }
-        if(itemCell.accessoryType == .checkmark){
+        if(itemCell.accessoryType == .checkmark ){
             itemCell.textLabel?.textColor = UIColor.white
             itemCell.accessoryType = .none
             itemCell.backgroundColor = UIColor.systemBackground
@@ -43,8 +59,9 @@ class ToDoListViewController: UITableViewController{
             itemCell.tintColor = UIColor.systemYellow
             itemCell.backgroundColor = UIColor.systemBlue
         }
-        print(itemCell.textLabel!.text!)
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        itemArray[indexPath.row].done = itemCell.accessoryType == .checkmark ? true : false
+        saveItems()
     }
     @IBAction func toAdd(_ sender: UIBarButtonItem) {
         
@@ -56,14 +73,26 @@ class ToDoListViewController: UITableViewController{
         addNewTodoView.delegate = self
         self.tableView.addSubview(addNewTodoView)
     }
+    func saveItems(){
+        let encoder = PropertyListEncoder()
+        do{
+            let data = try encoder.encode(itemArray)
+            try data.write(to:dataFilePath!)}
+        catch{
+            let alert = UIAlertController(title: "Error", message: "Fail to add new todo", preferredStyle: .alert)
+            present(alert, animated: true, completion: nil)
+        }
+        
+    }
     
 }
 
 extension ToDoListViewController:addNewItem{
-    func add(what: String) {
+    func add(what: TodoItem) {
         self.itemArray.append(what)
         self.tableView.reloadData()
         self.addBarButton.isEnabled = true
+        saveItems()
     }
     
     func setAddBarButton(){

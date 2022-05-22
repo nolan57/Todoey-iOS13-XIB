@@ -37,7 +37,9 @@ class AddNewTodoView: UIView {
             if whatTextField.text == ""{
                 return
             }
-            if let todo = whatTextField.text{
+            if let what = whatTextField.text{
+                let todo = TodoItem()
+                todo.what = what
                 delegate!.add(what:todo)
             }
             removeFromSuperview()
@@ -50,6 +52,6 @@ class AddNewTodoView: UIView {
     
 }
 protocol addNewItem {
-    func add(what:String) -> Void
-    func setAddBarButton()->Void
+    func add(what:TodoItem)
+    func setAddBarButton()
 }

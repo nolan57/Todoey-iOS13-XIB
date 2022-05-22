@@ -11,6 +11,7 @@
 		634B72162838CA5E007AD2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BE4F9239524DB00FB933B /* AppDelegate.swift */; };
 		634B72182838CA66007AD2FD /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B5DEC283284ED00F0C654 /* ToDoListViewController.swift */; };
 		634B721A2838CA69007AD2FD /* AddNewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B72062838C70C007AD2FD /* AddNewTodoView.swift */; };
+		634B722028390B67007AD2FD /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B721F28390B67007AD2FD /* TodoItem.swift */; };
 		636B5DF128328AB100F0C654 /* BettinsPersonalUse-ywPem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 636B5DF028328AB100F0C654 /* BettinsPersonalUse-ywPem.ttf */; };
 		EB2BE501239524DB00FB933B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2BE4FF239524DB00FB933B /* Main.storyboard */; };
 		EB2BE503239524DC00FB933B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2BE502239524DC00FB933B /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		634B71F32838B55C007AD2FD /* AddNewTodoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewTodoView.xib; sourceTree = "<group>"; };
 		634B72062838C70C007AD2FD /* AddNewTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTodoView.swift; sourceTree = "<group>"; };
+		634B721F28390B67007AD2FD /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		636B5DEC283284ED00F0C654 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		636B5DF028328AB100F0C654 /* BettinsPersonalUse-ywPem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BettinsPersonalUse-ywPem.ttf"; sourceTree = "<group>"; };
 		EB2BE4F6239524DB00FB933B /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				EB2BE502239524DC00FB933B /* Assets.xcassets */,
 				EB2BE504239524DC00FB933B /* LaunchScreen.storyboard */,
 				EB2BE507239524DC00FB933B /* Info.plist */,
+				634B721F28390B67007AD2FD /* TodoItem.swift */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				634B721A2838CA69007AD2FD /* AddNewTodoView.swift in Sources */,
 				634B72182838CA66007AD2FD /* ToDoListViewController.swift in Sources */,
+				634B722028390B67007AD2FD /* TodoItem.swift in Sources */,
 				634B72162838CA5E007AD2FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
